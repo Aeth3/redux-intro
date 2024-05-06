@@ -23,6 +23,7 @@ const accountSlice = createSlice({
           ? state.balance - action.payload
           : state.balance;
     },
+    // In order to make action.payload receive more than one argument, use prepare()
     requestLoan: {
       prepare(amount, purpose) {
         return { payload: { amount, purpose } };
